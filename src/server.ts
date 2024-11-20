@@ -1,1 +1,1 @@
-console.log("Welcome to Khubz Pizza");
+console.log("Welcome to Pizzical.");
