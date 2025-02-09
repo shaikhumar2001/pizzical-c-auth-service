@@ -1,11 +1,5 @@
 function welcome(name: string) {
-  console.log("Welcome to Pizzical.");
-
-  const user = { name: "john" };
-
-  const fname = user.name;
-
-  return name + fname;
+  return name;
 }
 
-welcome("Doe");
+welcome("John");
