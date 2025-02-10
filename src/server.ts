@@ -1,5 +1,3 @@
-function welcome(name: string) {
-  return name;
-}
+import { Config } from "./config";
 
-welcome("John");
+console.log(Config.PORT, Config.NODE_ENV);
