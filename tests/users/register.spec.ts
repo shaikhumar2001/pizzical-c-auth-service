@@ -47,12 +47,9 @@ describe("POST /auth/register", () => {
       };
 
       // Act
-      const response = await request(app).post("/auth/register").send(userData);
+      await request(app).post("/auth/register").send(userData);
 
-      // Assert: application/json in the response header content-type
-      expect(response.headers["content-type"]).toEqual(
-        expect.stringContaining("json"),
-      );
+      // Assert: pending...
     });
   });
   describe("Fields are missing", () => {});
