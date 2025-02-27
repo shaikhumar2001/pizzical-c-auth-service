@@ -6,6 +6,9 @@ import authRouter from "./routes/auth";
 
 const app = express();
 
+// allow the use of json in the app
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.send("Welcome to auth service");
 });
