@@ -28,7 +28,7 @@ describe("POST /auth/register", () => {
         firstName: "John",
         lastName: "Doe",
         email: "johndoe@email.com",
-        password: "secretpassword",
+        password: "password",
       };
 
       // Act
@@ -43,7 +43,7 @@ describe("POST /auth/register", () => {
         firstName: "John",
         lastName: "Doe",
         email: "johndoe@email.com",
-        password: "secretpassword",
+        password: "password",
       };
 
       // Act
@@ -60,7 +60,7 @@ describe("POST /auth/register", () => {
         firstName: "John",
         lastName: "Doe",
         email: "johndoe@email.com",
-        password: "secretpassword",
+        password: "password",
       };
 
       // Act
@@ -80,7 +80,7 @@ describe("POST /auth/register", () => {
         firstName: "John",
         lastName: "Doe",
         email: "johndoe@email.com",
-        password: "secretpassword",
+        password: "password",
       };
 
       // Act
@@ -95,7 +95,7 @@ describe("POST /auth/register", () => {
         firstName: "John",
         lastName: "Doe",
         email: "johndoe@email.com",
-        password: "secretpassword",
+        password: "password",
       };
 
       // Act
@@ -113,7 +113,7 @@ describe("POST /auth/register", () => {
         firstName: "John",
         lastName: "Doe",
         email: "johndoe@email.com",
-        password: "secretpassword",
+        password: "password",
       };
 
       // Act
@@ -132,7 +132,7 @@ describe("POST /auth/register", () => {
         firstName: "John",
         lastName: "Doe",
         email: "johndoe@email.com",
-        password: "secretpassword",
+        password: "password",
       };
       const userRepository = connection.getRepository(User);
       await userRepository.save({ ...userData, role: Roles.CUSTOMER });
@@ -153,7 +153,7 @@ describe("POST /auth/register", () => {
         firstName: "John",
         lastName: "Doe",
         email: "",
-        password: "secretpassword",
+        password: "password",
       };
 
       // Act
@@ -171,7 +171,7 @@ describe("POST /auth/register", () => {
         firstName: "",
         lastName: "Doe",
         email: "johndoe@email.com",
-        password: "secretpassword",
+        password: "password",
       };
 
       // Act
@@ -189,7 +189,7 @@ describe("POST /auth/register", () => {
         firstName: "John",
         lastName: "",
         email: "johndoe@email.com",
-        password: "secretpassword",
+        password: "password",
       };
 
       // Act
@@ -227,7 +227,7 @@ describe("POST /auth/register", () => {
         firstName: "John",
         lastName: "Doe",
         email: " johndoe@email.com ",
-        password: "secretpassword",
+        password: "password",
       };
 
       // Act
@@ -245,7 +245,7 @@ describe("POST /auth/register", () => {
         firstName: "John",
         lastName: "Doe",
         email: "johndoeemail.com",
-        password: "secretpassword",
+        password: "password",
       };
 
       // Act
