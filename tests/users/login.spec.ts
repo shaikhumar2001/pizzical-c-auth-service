@@ -21,7 +21,7 @@ describe("POST /auth/login", () => {
 
   // Happy Path
   describe("Given all fields", () => {
-    it("should return 201 status code", async () => {
+    it("should return 200 status code", async () => {
       // Arrange
       const registerUserData = {
         firstName: "John",
@@ -43,7 +43,7 @@ describe("POST /auth/login", () => {
         .send(loginUserData);
 
       // Assert
-      expect(response.statusCode).toBe(201);
+      expect(response.statusCode).toBe(200);
     });
   });
 
