@@ -13,6 +13,8 @@ const startServer = async () => {
     });
   } catch (err: unknown) {
     if (err instanceof Error) {
+      // eslint-disable-next-line no-console
+      console.error(err);
       logger.error(err.message || "Unexpected error occurred!");
       setTimeout(() => {
         process.exit(1);

@@ -23,6 +23,7 @@ describe("POST /auth/register", () => {
     await connection.destroy();
   });
 
+  // Happy Path
   describe("Given all fields", () => {
     it("should return 201 status code", async () => {
       // Arrange
@@ -210,6 +211,8 @@ describe("POST /auth/register", () => {
       expect(tokens).toHaveLength(1);
     });
   });
+
+  // Sad Path
   describe("Fields are missing", () => {
     it("should return 400s status code if email field is missing", async () => {
       // Arrange
@@ -284,6 +287,8 @@ describe("POST /auth/register", () => {
       expect(users).toHaveLength(0);
     });
   });
+
+  // Format Path
   describe("Fields are not in proper format", () => {
     it("should trim the email field", async () => {
       // Arrange
