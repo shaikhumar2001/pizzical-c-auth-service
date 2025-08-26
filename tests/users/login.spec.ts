@@ -45,6 +45,32 @@ describe("POST /auth/login", () => {
       // Assert
       expect(response.statusCode).toBe(200);
     });
+    it("should return valid json response", async () => {
+      // Arrange
+      const registerUserData = {
+        firstName: "John",
+        lastName: "Doe",
+        email: "johndoe@email.com",
+        password: "password",
+      };
+
+      await request(app).post("/auth/register").send(registerUserData);
+
+      const loginUserData = {
+        email: "johndoe@email.com",
+        password: "password",
+      };
+
+      // Act
+      const response = await request(app)
+        .post("/auth/login")
+        .send(loginUserData);
+
+      // Assert: application/json in the response header content-type
+      expect(response.headers["content-type"]).toEqual(
+        expect.stringContaining("json"),
+      );
+    });
   });
 
   // Sad Path
