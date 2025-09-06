@@ -15,6 +15,17 @@
 //
 import crypto from "crypto";
 import fs from "fs";
+import path from "path";
+
+
+// Define the certs directory
+const certsDir = path.resolve("certs");
+
+// Ensure the directory exists (recursive allows nested dirs)
+if (!fs.existsSync(certsDir)) {
+  fs.mkdirSync(certsDir, { recursive: true });
+  console.log(`Created directory: ${certsDir}`);
+}
 
 const { publicKey, privateKey } = crypto.generateKeyPairSync("rsa", {
   modulusLength: 2048,
@@ -31,5 +42,8 @@ const { publicKey, privateKey } = crypto.generateKeyPairSync("rsa", {
 console.log("Public Key: ", publicKey);
 console.log("Private Key: ", privateKey);
 
-fs.writeFileSync("certs/public.pem", publicKey);
-fs.writeFileSync("certs/private.pem", privateKey);
+// Save the keys
+fs.writeFileSync(path.join(certsDir, "public.pem"), publicKey);
+fs.writeFileSync(path.join(certsDir, "private.pem"), privateKey);
+
+console.log("Keys generated and saved in:", certsDir);
